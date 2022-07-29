@@ -1,3 +1,7 @@
+init:
+	rm -rf logistix
+	docker-compose run --rm app rails new logistix -T --javascript=webpack --css=tailwind --skip-active-record --skip-hotwire --skip-jbuilder --skip-action-mailer --skip-action-mailbox —skip-action-text --skip-active-job --skip-active-storage
+
 setup: build bundle
 
 build:
