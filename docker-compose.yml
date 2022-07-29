@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      target: base
+    env_file: .env
+    tty: true
+    command: "rails s -b 0.0.0.0"
+    volumes:
+      - ./:/app
+      - bundle:/usr/local/bundle
+    ports:
+      - 3000:3000
+
+volumes:
+  bundle:
