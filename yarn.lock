@@ -1034,6 +1034,11 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
+"@rails/actioncable@^7.0.3-1":
+  version "7.0.3-1"
+  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.0.3-1.tgz#041a5c81cdf0c68b70a783fdc3ffad0835c3da02"
+  integrity sha512-c2TEL1hLjgSZLqTD6US25nYWv3zKaY2VVzJSqiDIlV6EkEEBirf1REOz6gPbC9Eb+5e0wI/Fp0IbAHL+86eKxg==
+
 "@rails/webpacker@5.4.3":
   version "5.4.3"
   resolved "https://registry.yarnpkg.com/@rails/webpacker/-/webpacker-5.4.3.tgz#cfe2d8faffe7db5001bad50a1534408b4f2efb2f"
@@ -2445,6 +2450,11 @@ cyclist@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha512-NJGVKPS81XejHcLhaLJS7plab0fK3slPh11mESeeDq2W4ZI5kUKK/LRRdVDvjJseojbPB7ZwjnyOybg3Igea/A==
+
+dayjs@^1.11.4:
+  version "1.11.4"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.4.tgz#3b3c10ca378140d8917e06ebc13a4922af4f433e"
+  integrity sha512-Zj/lPM5hOvQ1Bf7uAvewDaUcsJoI6JmNqmHhHl3nyumwe0XHwt8sWdOVAPACJzCebL8gQCi+K49w7iKWnGwX9g==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
