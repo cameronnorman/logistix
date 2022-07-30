@@ -20,6 +20,7 @@
 If you have docker and docker-compose installed you can start the application by running:
 ```bash
 git clone git@github.com:cameronnorman/logistix.git
+cd logistix
 make setup
 make run
 ```
