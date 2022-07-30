@@ -13,6 +13,7 @@
 - Out of the interest of this challenge I decided to use a rails application with react embeded. When building the application in business context where I would have time I would not choose this approach and instead build it as two seperate applications
 - In the bookings controller I use `skip_before_action :verify_authenticity_token`. I did this out of time interest. In a production system I obviously would not do this.
 - When creating a booking I publish all available slots and booked slots to the frontend. This is not a efficient. I did this simple way to save time with the project. Would not do this in a production project!
+- I decided not to implement end2end tests in this project but if I had to do it for a production project I would use cypress. I would obviously integrate this in the CI/CD pipleline and control pull request merging by using it.
 ## Getting Started
 
 ### Docker
