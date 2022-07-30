@@ -10,16 +10,16 @@ class Api::V1::BookingsController < ApplicationController
   end
 
 	def create
-		booking = Booking.new(nil, booking_params[:start_date_time], booking_params[:end_date_time])
-		booking.save
-
-		date = Date.parse(booking_params[:start_date_time])
-		bookings = Booking.find_by_date(date)
-		available_slots = Booking.find_avaliabilities(date, booking_params[:delivery_interval])
-		response = bookings.concat(available_slots)
-		ActionCable.server.broadcast("bookings_#{date}", response.to_json)
-
-		render json: {}, status: :created
+		booking = BookingInstance.new(nil, booking_params[:start_date_time], booking_params[:end_date_time])
+		if booking.save
+			date = Date.parse(booking_params[:start_date_time])
+			bookings = Booking.find_by_date(date)
+			available_slots = Booking.find_avaliabilities(date, booking_params[:delivery_interval])
+			response = bookings.concat(available_slots)
+			ActionCable.server.broadcast("bookings_#{date}", response.to_json)
+		else
+			render json: {message: "Slot has already been booked"}, status: :unprocessable_entity
+		end
 	end
 
 	private
