@@ -16,6 +16,9 @@ shell:
 console:
 	docker-compose run --rm app rails c
 
+rubocop:
+	docker-compose run --rm app rubocop -A
+
 run:
 	rm -f tmp/pids/server.pid
 	docker-compose run --rm --service-ports app rails s -b 0.0.0.0 -p 3000
