@@ -1,10 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Counter from "../components/Counter";
+import { createRoot } from 'react-dom/client';
+import App from "../App";
 
 document.addEventListener("DOMContentLoaded", () => {
-  ReactDOM.render(
-    <Counter />,
-    document.body.appendChild(document.createElement("div"))
-  );
+  const container = document.getElementById("app")
+  const root = createRoot(container);
+  root.render(<App />);
 });

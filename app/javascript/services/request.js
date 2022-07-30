@@ -1,10 +1,13 @@
 const headers = new Headers({});
 
-const request = async (method, path, body) => {
+const request = async (method, path, body = null) => {
   headers.set("Content-Type", "application/json");
 
-  const baseUrl = process.env.REACT_APP_API_URL;
-  const fetchOptions = { method, headers, body: JSON.stringify(body) };
+  const baseUrl = "";
+  let fetchOptions = { method, headers };
+  if (body !== null) {
+    fetchOptions = { ...fetchOptions, body: JSON.stringify(body) };
+  }
   const url = `${baseUrl}${path}`;
   const response = await fetch(url, fetchOptions);
 
