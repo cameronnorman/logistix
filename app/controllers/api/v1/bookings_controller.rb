@@ -15,12 +15,15 @@ module Api
 
       def create
         booking = BookingInstance.new(nil, booking_params[:start_date_time], booking_params[:end_date_time])
+
         if booking.save
           date = Date.parse(booking_params[:start_date_time])
           bookings = Booking.find_by_date(date)
-          available_slots = Booking.find_avaliabilities(date, booking_params[:delivery_interval])
+          interval = booking_params[:delivery_interval] || 30
+          available_slots = Booking.find_avaliabilities(date, interval)
           response = bookings.concat(available_slots)
           ActionCable.server.broadcast("bookings_#{date}", response.to_json)
+          render json: {}, status: :ok
         else
           render json: { message: 'Slot has already been booked' }, status: :unprocessable_entity
         end
