@@ -17,4 +17,4 @@ BOOKINGS = [
     "end_date_time": '2022-02-01T13:00:00.000Z' },
   { "uuid": '5117e557-8d86-4180-9326-1ce0cf733982', "start_date_time": '2022-02-01T13:00:00.000Z',
     "end_date_time": '2022-02-01T13:10:00.000Z' }
-].freeze
+]
