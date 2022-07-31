@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import dayjs from "dayjs";
+
 import DaySlots from "./components/DaySlots";
 import DateIntervalPicker from "./components/DateIntervalPicker";
 import { getBookingSlots, bookSlot } from "./services/bookings";
@@ -11,9 +13,9 @@ const App = () => {
 
   const [loading, setLoading] = useState(false);
   const [bookingSlots, setBookingSlots] = useState([]);
-  const [date, setDate] = useState(params.date);
+  const [date, setDate] = useState(params.date || dayjs().format("YYYY-MM-DD"));
   const [deliveryInterval, setDeliveryInterval] = useState(
-    params.deliveryInterval
+    params.deliveryInterval || 30
   );
   const cons = createConsumer(`/cable`);
 
